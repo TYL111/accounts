@@ -61,21 +61,24 @@ class fun():
         if search_type == "date":
             search_by_date = input("Search by month(YYYY-MM) or date(YYYY-MM-DD):")
             print("\n\n")
+            print("{:15}{:10}{:15}{:10}".format("DATE","ITEM","CATEGORY","COST"),end="\n\n")
             for x in self.file_manager.account_record:
                 if search_by_date in x["date"]:
-                    print(x["date"],x["item"],x["category"],"$"+x["cost"])
+                    print("{:15}{:10}{:15}{:10}".format(x["date"],x["item"],x["category"],"$"+x["cost"]))
                     sum += int(x["cost"])
         elif search_type == "category":
             search_by_category = input("Search by category:")
             print("\n\n")
+            print("{:15}{:10}{:15}{:10}".format("DATE","ITEM","CATEGORY","COST"),end="\n\n")
             for x in self.file_manager.account_record:
                 if x["category"] == search_by_category:
-                    print(x["date"],x["item"],x["category"],"$"+x["cost"])
+                    print("{:15}{:10}{:15}{:10}".format(x["date"],x["item"],x["category"],"$"+x["cost"]))
                     sum += int(x["cost"])
         elif search_type == "all":
             print("\n\n")
+            print("{:15}{:10}{:15}{:10}".format("DATE","ITEM","CATEGORY","COST"),end="\n\n")
             for x in self.file_manager.account_record:
-                print(x["date"],x["item"],x["category"],"$"+x["cost"])
+                print("{:15}{:10}{:15}{:10}".format(x["date"],x["item"],x["category"],"$"+x["cost"]))
                 sum += int(x["cost"])
 
         else:
